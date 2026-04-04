@@ -6,157 +6,207 @@
 </head>
 <body>
 
-    
-    <div class="topbar">
-        <p>Home | Login | Register | Bank Card Discounts</p>
-    </div>
+<div class="topbar">
+    <ul class="top-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Register</a></li>
+        <li><a href="#">Bank Card Discounts</a></li>
+    </ul>
+</div>
 
-    <div class="categories">
-        <ul>
-            <li>All Books</li>
-            <li>Fiction</li>
-            <li>Non-Fiction</li>
-            <li>Young Adults</li>
-            <li>Children</li>
-            <li>Urdu Books</li>
-            <li>Our Publications</li>
-            <li>High Discounts</li>
-            <li>Stationery & Art Supplies</li>
-            <li>Toys & Games</li>
-            <li>Send Gift Card</li>
-        </ul>
-    </div>
+<div class="upperclass">
+    <div class="logo">READINGS</div>
 
-    
-    <div class="logo">
-       <p>READINGS</p> 
-    </div>
-
-    
-
-    
-
-
-   
     <div class="search">
-        <input type="text">
-        <button>Search</button>
+        <input type="text" placeholder="Enter Book Name or ISBN">
+        <button id="searchbook">Search</button>
     </div>
 
-   
-    <div class="banner">
-        <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/b4857f04-cc75-4e38-b3ae-325983383772.jpg" alt="wraf" >
+    <div class="orderbasket">
+        <h4>ORDERS</h4>
+        <img src="https://www.readings.com.pk/images/cart.png" alt="cart">
+    </div>
+</div>
+
+<!-- MENU -->
+<div class="categories">
+    <ul class="main-menu">
+        <li><a href="#">All Books</a></li>
+
+        <li>
+            <a href="#">Fiction</a>
+            <ul class="submenu">
+                <li><a href="#">Romance</a></li>
+                <li><a href="#">Mystery</a></li>
+                <li><a href="#">Fantasy</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">Non-Fiction</a>
+            <ul class="submenu">
+                <li><a href="#">Biography</a></li>
+                <li><a href="#">Self-Help</a></li>
+                <li><a href="#">History</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">Children</a>
+            <ul class="submenu">
+                <li><a href="#">Story Books</a></li>
+                <li><a href="#">Activity Books</a></li>
+                <li><a href="#">Learning</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">Stationery</a>
+            <ul class="submenu">
+                <li><a href="#">Notebooks</a></li>
+                <li><a href="#">Art Supplies</a></li>
+                <li><a href="#">School Items</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">Toys & Games</a>
+            <ul class="submenu">
+                <li><a href="#">Board Games</a></li>
+                <li><a href="#">Puzzles</a></li>
+                <li><a href="#">Educational Toys</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+    <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/b4857f04-cc75-4e38-b3ae-325983383772.jpg" alt="banner">
+</div>
+
+<!-- MAIN SECTION -->
+<div class="section">
+
+    <!-- NEW RELEASES -->
+    <div class="slider-container">
+
+        <div class="nav-btn left-btn">&#10094;</div>
+
+        <div class="books-wrapper">
+            <h2>New Releases</h2>
+
+            <div class="book">
+                <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9781542025614.webp">
+                <div class="bookinfo">
+                    <div class="booktitle">Woman Down</div>
+                    <div class="author">Colleen Hoover</div>
+                    <div class="product-stock in-stock">In Stock</div>
+                    <div class="price">Rs. 4500</div>
+                    <div class="cart"><img src="https://www.readings.com.pk/images/cart.png"></div>
+                </div>
+            </div>
+
+            <div class="book">
+                <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9786275100874.webp">
+                <div class="bookinfo">
+                    <div class="booktitle">War and Peace</div>
+                    <div class="author">Leo Tolstoy</div>
+                    <div class="product-stock in-stock">In Stock</div>
+                    <div class="price">Rs. 3000</div>
+                    <div class="cart"><img src="https://www.readings.com.pk/images/cart.png"></div>
+                </div>
+            </div>
+
+            <div class="book">
+                <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9789696403616.webp">
+                <div class="bookinfo">
+                    <div class="booktitle">What Remains After A Fire</div>
+                    <div class="author">Kanza Javed</div>
+                    <div class="product-stock in-stock">In Stock</div>
+                    <div class="price">Rs. 2500</div>
+                    <div class="cart"><img src="https://www.readings.com.pk/images/cart.png"></div>
+                </div>
+            </div>
+
+            <div class="book">
+                <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9789696403647.webp">
+                <div class="bookinfo">
+                    <div class="booktitle">Ooper wali Manzil</div>
+                    <div class="author">Rafaqat H</div>
+                    <div class="product-stock in-stock">In Stock</div>
+                    <div class="price">Rs. 2000</div>
+                    <div class="cart"><img src="https://www.readings.com.pk/images/cart.png"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="nav-btn right-btn">&#10095;</div>
     </div>
 
-   
-    <div class="section">
-        <h2>New Releases</h2>
+    <!-- TRENDING -->
+    <div class="slider-container">
 
-        <div class="right-arrow">></div>
-        <div class="left-arrow"><</div>
+        <div class="nav-btn left-btn">&#10094;</div>
 
+        <div class="books-wrapper">
+            <h2>Trending</h2>
 
-        <div class="book">
-            <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9781542025614.webp" alt="wd">
-            <p>Woman Down</p>
-            <p class="author">Colleen Hoover</p>
-            <div class="product-stock in-stock">In Stock</div>
-            <div class="cart">
-              <img src="https://www.readings.com.pk/images/cart.png" alt="cart">
+            <div class="book">
+                <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9781789054583.webp">
+                <div class="bookinfo">
+                    <div class="booktitle">Children's book</div>
+                    <div class="author">Igloo books Ltd</div>
+                    <div class="product-stock in-stock">In Stock</div>
+                    <div class="price">Rs. 1000</div>
+                    <div class="cart"><img src="https://www.readings.com.pk/images/cart.png"></div>
+                </div>
             </div>
-            
+
+            <div class="book">
+                <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9781471407277.webp">
+                <div class="bookinfo">
+                    <div class="booktitle">Cruel Prince</div>
+                    <div class="author">Holy Black</div>
+                    <div class="product-stock in-stock">In Stock</div>
+                    <div class="price">Rs. 3500</div>
+                    <div class="cart"><img src="https://www.readings.com.pk/images/cart.png"></div>
+                </div>
+            </div>
+
+            <div class="book">
+                <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9789696400882.webp">
+                <div class="bookinfo">
+                    <div class="booktitle">How to win friends</div>
+                    <div class="author">Dale Carnegie</div>
+                    <div class="product-stock in-stock">In Stock</div>
+                    <div class="price">Rs. 2000</div>
+                    <div class="cart"><img src="https://www.readings.com.pk/images/cart.png"></div>
+                </div>
+            </div>
+
+            <div class="book">
+                <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9781526648587.webp">
+                <div class="bookinfo">
+                    <div class="booktitle">The ocean would paint me blue</div>
+                    <div class="author">Zoulfa Katouh</div>
+                    <div class="product-stock in-stock">In Stock</div>
+                    <div class="price">Rs. 4500</div>
+                    <div class="cart"><img src="https://www.readings.com.pk/images/cart.png"></div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="book">
-            <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9786275100874.webp" alt="wap">
-            <p>War and Peace</p>
-            <p class="author">Leo Tolstoy</p>
-            <div class="product-stock in-stock">In Stock</div>
-             <div class="cart">
-              <img src="https://www.readings.com.pk/images/cart.png" alt="cart">
-            </div>
-        </div>
-
-        <div class="book">
-            <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9789696403616.webp" alt="w">
-            <p>What Remains After A Fire</p>
-            <p class="author">Kanza Javed</p>
-            <div class="product-stock in-stock">In Stock</div>
-             <div class="cart">
-              <img src="https://www.readings.com.pk/images/cart.png" alt="cart">
-            </div>
-        </div>
-
-
-         <div class="book">
-            <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9789696403647.webp" alt="ooper wali mazil">
-            <p>Ooper wali Manzil</p>
-            <p class="author">Rafaqat H</p>
-            <div class="product-stock in-stock">In Stock</div>
-             <div class="cart">
-              <img src="https://www.readings.com.pk/images/cart.png" alt="cart">
-            </div>
-        </div>
-
-
-
+        <div class="nav-btn right-btn">&#10095;</div>
     </div>
 
+</div>
 
-            <div class="section">
-        <h2>Trending</h2>
-
-         <div class="right-arrow">></div>
-         <div class="left-arrow"><</div>
-
-        <div class="book">
-            <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9781789054583.webp" alt="wd">
-            <p>Children's book</p>
-            <p class="author">Igloo books Ltd</p>
-            <div class="product-stock in-stock">In Stock</div>
-            <div class="cart">
-              <img src="https://www.readings.com.pk/images/cart.png" alt="cart">
-            </div>
-            
-        </div>
-
-        <div class="book">
-            <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9781471407277.webp" alt="wap">
-            <p>Cruel Prince</p>
-            <p class="author">Holy Black</p>
-            <div class="product-stock in-stock">In Stock</div>
-             <div class="cart">
-              <img src="https://www.readings.com.pk/images/cart.png" alt="cart">
-            </div>
-        </div>
-
-        <div class="book">
-            <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9789696400882.webp" alt="w">
-            <p>How to win friends and influence people</p>
-            <p class="author">Dale Carneigie</p>
-            <div class="product-stock in-stock">In Stock</div>
-             <div class="cart">
-              <img src="https://www.readings.com.pk/images/cart.png" alt="cart">
-            </div>
-        </div>
-
-
-         <div class="book">
-            <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9781526648587.webp" alt="a">
-            <p>The ocean would paint me blue</p>
-            <p class="author">Zoulfa Katouh</p>
-            <div class="product-stock in-stock">In Stock</div>
-             <div class="cart">
-              <img src="https://www.readings.com.pk/images/cart.png" alt="cart">
-            </div>
-        </div>
-
-
-
-    </div>
-
-    <footer class="footer">
-
+<!-- FOOTER -->
+<footer class="footer">
     <div class="footer-container">
 
         <div class="footer-column">
@@ -177,12 +227,8 @@
             <h3>Help</h3>
             <p>Placing an Order</p>
             <p>Payment</p>
-            <p>Packing and Shipping</p>
-            <p>Tracking Orders</p>
-            <p>Cancelling Orders</p>
+            <p>Shipping</p>
             <p>Returns</p>
-            <p>International Orders</p>
-            <p>Readings Mobile App</p>
         </div>
 
         <div class="footer-column">
@@ -193,7 +239,6 @@
         </div>
 
     </div>
-
 </footer>
 
 </body>
