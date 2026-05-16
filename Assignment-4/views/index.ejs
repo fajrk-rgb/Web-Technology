@@ -1,0 +1,224 @@
+<div class="banner">
+
+    <img src="/assets/sliderimg.jpg" alt="banner">
+
+</div>
+
+
+<div class="products-page">
+
+
+    <!-- NEW RELEASES -->
+
+    <div class="slider-section">
+
+        <div class="section-header">
+
+            <h2>New Releases</h2>
+
+            <a href="/products" class="view-more">
+
+                View More
+
+            </a>
+
+        </div>
+
+        <div class="slider-container">
+
+            <button class="nav-btn left-btn">
+
+                &#10094;
+
+            </button>
+
+            <div class="products-slider">
+
+                <% newReleases.forEach(product => { %>
+
+                    <a 
+                        href="/products/<%= product._id %>"
+                        class="product-link"
+                    >
+
+                        <div class="product-card">
+
+                            <img
+                                src="<%= product.image %>"
+                                alt="<%= product.name %>"
+                                onerror="this.src='/assets/default.jpg'"
+                            >
+
+                            <div class="product-info">
+
+                                <h3>
+
+                                    <%= product.name %>
+
+                                </h3>
+
+                                <p>
+
+                                    Category:
+                                    <%= product.category %>
+
+                                </p>
+
+                                <p>
+
+                                    Price:
+                                    Rs. <%= product.price %>
+
+                                </p>
+
+                                <p>
+
+                                    Rating:
+                                    <%= product.rating %>
+
+                                </p>
+
+                                <p>
+
+                                    Stock:
+                                    <%= product.stock %>
+
+                                </p>
+
+                                <button class="cart-btn">
+
+                                    Add To Cart
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+                <% }) %>
+
+            </div>
+
+            <button class="nav-btn right-btn">
+
+                &#10095;
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- TRENDING -->
+
+    <div class="slider-section">
+
+        <div class="section-header">
+
+            <h2>Trending</h2>
+
+            <a href="/products" class="view-more">
+
+                View More
+
+            </a>
+
+        </div>
+
+        <div class="slider-container">
+
+            <button class="nav-btn left-btn">
+
+                &#10094;
+
+            </button>
+
+            <div class="products-slider">
+
+                <% trending.forEach(product => { %>
+
+                    <a 
+                        href="/products/<%= product._id %>"
+                        class="product-link"
+                    >
+
+                        <div class="product-card">
+
+                            <img
+                                src="<%= product.image %>"
+                                alt="<%= product.name %>"
+                                onerror="this.src='/assets/default.jpg'"
+                            >
+
+                            <div class="product-info">
+
+                                <h3>
+
+                                    <%= product.name %>
+
+                                </h3>
+
+                                <p>
+
+                                    Category:
+                                    <%= product.category %>
+
+                                </p>
+
+                                <p>
+
+                                    Price:
+                                    Rs. <%= product.price %>
+
+                                </p>
+
+                                <p>
+
+                                    Rating:
+                                    <%= product.rating %>
+
+                                </p>
+
+                                <p>
+
+                                    Stock:
+                                    <%= product.stock %>
+
+                                </p>
+
+                                <button class="cart-btn">
+
+                                    Add To Cart
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+                <% }) %>
+
+            </div>
+
+            <button class="nav-btn right-btn">
+
+                &#10095;
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="/js/menu.js"></script>
+
+<script src="/js/homeSlider.js"></script>

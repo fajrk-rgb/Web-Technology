@@ -1,0 +1,74 @@
+<div class="product-details-page">
+
+    <div class="product-details-card">
+
+        <div class="product-image">
+
+            <img
+                src="<%= product.image %>"
+                alt="<%= product.name %>"
+                onerror="this.src='/assets/default.jpg'"
+            >
+
+        </div>
+
+        <div class="details-content">
+
+            <h1><%= product.name %></h1>
+
+            <div class="product-category">
+
+                Category:
+                <span><%= product.category %></span>
+
+            </div>
+
+            <div class="product-price">
+
+                Rs. <%= product.price %>
+
+            </div>
+
+            <div class="product-rating">
+
+                Rating:
+                <span>
+                     <%= product.rating %>/5
+                </span>
+
+            </div>
+
+            <div class="product-stock">
+
+                <% if(product.stock > 0){ %>
+
+                    <span class="in-stock">
+
+                        In Stock
+                        (<%= product.stock %> available)
+
+                    </span>
+
+                <% } else { %>
+
+                    <span class="out-stock">
+
+                        Out Of Stock
+
+                    </span>
+
+                <% } %>
+
+            </div>
+
+            <button class="cart-btn">
+
+                Add To Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
