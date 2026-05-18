@@ -1,0 +1,112 @@
+<div class="topbar">
+    <ul class="top-menu">
+        <li><a href="/">Home</a></li>
+        <% if (!user) { %>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+        <% } else { %>
+        <li><a href="/profile">My Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <% if (user.role === 'admin') { %>
+        <li><a href="/admin">Admin Panel</a></li>
+        <% } %>
+        <% } %>
+    </ul>
+    <% if (user) { %>
+    <div class="topbar-welcome">Welcome, <strong><%= user.name %></strong></div>
+    <% } %>
+</div>
+
+<div class="upperclass">
+
+    <div class="logo">
+
+        READINGS
+
+    </div>
+
+    <form action="/products" method="GET" class="home-search-form">
+
+        <input
+            id="searchinput"
+            type="text"
+            name="search"
+            placeholder="Enter Book Name or ISBN"
+        >
+
+        <button id="search" type="submit">
+
+            Search
+
+        </button>
+
+    </form>
+
+    <div class="orderbasket">
+        <form action="/cart" method="GET">
+            <button type="submit" class="orders-btn">
+                <span>ORDERS</span>
+                <img src="/assets/cart.png" alt="cart">
+            </button>
+        </form>
+
+    </div>
+
+</div>
+
+<div class="categories">
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-expanded="false"
+        aria-controls="mainMenu"
+        aria-label="Toggle navigation"
+    >
+        ☰
+    </button>
+
+    <ul class="main-menu" id="mainMenu">
+
+        <li>
+            <a href="/products">All Products</a>
+        </li>
+
+        <li>
+
+            <a href="/fiction">Fiction</a>
+            
+
+        </li>
+
+        <li>
+
+            <a href="/non-fiction">Non-Fiction</a>
+           
+        </li>
+
+        <li>
+
+            <a href="/children">Children</a>
+
+
+
+        </li>
+
+        <li>
+
+            <a href="/stationery">Stationery</a>
+
+        </li>
+
+        <li>
+
+            <a href="/toys">Toys & Games</a>
+
+           
+
+        </li>
+
+    </ul>
+
+</div>

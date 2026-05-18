@@ -1,0 +1,90 @@
+<div class="border-bottom mb-4 pb-2">
+
+    <h1>
+        Dashboard
+    </h1>
+
+</div>
+
+
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <div class="card text-white bg-primary mb-3">
+
+            <div class="card-body">
+
+                <h5>
+                    Total Products
+                </h5>
+
+                <p class="display-4">
+                    <%= productCount %>
+                </p>
+
+                <a
+                    href="/admin/products"
+                    class="text-white"
+                >
+                    View Products
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="col-md-6">
+
+        <div class="card text-white bg-success mb-3">
+
+            <div class="card-body">
+
+                <h5>
+                    Total Categories
+                </h5>
+
+                <p class="display-4">
+                    <%= categoryCount %>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="col-md-6">
+
+    <div class="card text-white bg-dark mb-3">
+
+        <div class="card-body">
+
+            <h5>
+                Total Orders
+            </h5>
+
+            <p class="display-4">
+                <%= orderCount %>
+            </p>
+
+            <a
+                href="/admin/orders"
+                class="text-white"
+            >
+                View Orders
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

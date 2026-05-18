@@ -1,0 +1,147 @@
+    <h2 class="mb-4">
+        Add Product
+    </h2>
+
+    <form
+        action="/admin/products/add"
+        method="POST"
+        enctype="multipart/form-data"
+    >
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Product Name
+            </label>
+
+            <input
+                type="text"
+                name="name"
+                class="form-control"
+                required
+            >
+
+        </div>
+
+
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Price
+            </label>
+
+            <input
+                type="number"
+                step="0.01"
+                name="price"
+                class="form-control"
+                required
+            >
+
+        </div>
+
+
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Category
+            </label>
+
+            <input
+                type="text"
+                name="category"
+                class="form-control"
+                required
+            >
+
+        </div>
+
+
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Rating
+            </label>
+
+            <input
+                type="number"
+                step="0.1"
+                name="rating"
+                class="form-control"
+                required
+            >
+
+        </div>
+
+
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Stock
+            </label>
+
+            <input
+                type="number"
+                name="stock"
+                class="form-control"
+                required
+            >
+
+        </div>
+
+
+        <div class="mb-3">
+
+        <label class="form-label">
+            Featured Section
+        </label>
+
+        <select
+            name="featuredSections"
+            class="form-select">
+
+            <option value="">
+                None
+            </option>
+
+            <option value="new-release">
+                New Release
+            </option>
+
+            <option value="trending">
+                Trending
+            </option>
+
+        </select>
+
+    </div>
+
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Product Image
+            </label>
+
+            <input
+                type="file"
+                name="image"
+                class="form-control"
+            >
+
+        </div>
+
+
+
+        <button
+            type="submit"
+            class="btn btn-primary"
+        >
+            Add Product
+        </button>
+
+    </form>
