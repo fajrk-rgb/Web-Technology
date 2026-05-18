@@ -1,0 +1,176 @@
+<div class="container mt-5">
+
+    <h1 class="text-center mb-4">
+        On Sale Products
+    </h1>
+
+    <!-- Product List -->
+    <div id="product-list" class="row">
+
+        <% if (products.length === 0) { %>
+
+            <div class="col-12">
+                <div class="alert alert-warning text-center">
+                    No on-sale products available.
+                </div>
+            </div>
+
+        <% } %>
+
+        <% products.forEach(product => { %>
+
+            <div class="col-md-3 mb-4 product-card">
+
+                <div class="card h-100 shadow-sm">
+
+                    <!-- Product Image -->
+                    <img
+                        src="<%= product.image %>"
+                        class="card-img-top"
+                        alt="<%= product.name %>"
+                        style="height: 250px; object-fit: cover;"
+                    >
+
+                    <div class="card-body d-flex flex-column">
+
+                        <!-- Product Name -->
+                        <h5 class="card-title">
+                            <%= product.name %>
+                        </h5>
+
+                        <!-- Category -->
+                        <p class="text-muted mb-1">
+                            Category:
+                            <%= product.category %>
+                        </p>
+
+                        <!-- Price -->
+                        <p class="fw-bold text-success">
+                            Rs. <%= getDisplayPrice(product) %>
+                        </p>
+
+                        <!-- View Details Button -->
+                        <a
+                            href="/products/<%= product._id %>"
+                            class="btn btn-dark mt-auto"
+                        >
+                            View Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        <% }) %>
+
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="d-flex justify-content-center align-items-center gap-3 mt-4 mb-5">
+
+        <button
+            id="prevBtn"
+            class="btn btn-outline-dark"
+        >
+            Previous
+        </button>
+
+        <span
+            id="pageIndicator"
+            class="fw-bold"
+        >
+            Page 1
+        </span>
+
+        <button
+            id="nextBtn"
+            class="btn btn-outline-dark"
+        >
+            Next
+        </button>
+
+    </div>
+
+</div>
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+
+$(document).ready(function () {
+
+    // Select all product cards
+    const cards = $('.product-card');
+
+    // Products per page
+    const perPage = 10;
+
+    // Current page
+    let currentPage = 1;
+
+    // Total pages
+    const totalPages = Math.ceil(cards.length / perPage);
+
+    // Function to display products
+    function showPage(page) {
+
+        // Hide all products
+        cards.hide();
+
+        // Calculate start index
+        const start = (page - 1) * perPage;
+
+        // Show selected 10 products
+        cards.slice(start, start + perPage).show();
+
+        // Update page text
+        $('#pageIndicator').text(
+            `Page ${page} of ${totalPages}`
+        );
+
+        // Disable Previous button on first page
+        $('#prevBtn').prop(
+            'disabled',
+            page === 1
+        );
+
+        // Disable Next button on last page
+        $('#nextBtn').prop(
+            'disabled',
+            page === totalPages
+        );
+    }
+
+    // Show first page initially
+    showPage(currentPage);
+
+    // Next button click
+    $('#nextBtn').click(function () {
+
+        if (currentPage < totalPages) {
+
+            currentPage++;
+
+            showPage(currentPage);
+        }
+
+    });
+
+    // Previous button click
+    $('#prevBtn').click(function () {
+
+        if (currentPage > 1) {
+
+            currentPage--;
+
+            showPage(currentPage);
+        }
+
+    });
+
+});
+
+</script>

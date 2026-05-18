@@ -1,0 +1,51 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="mb-4">Your Cart</h2>
+
+      <% if (!items || items.length === 0) { %>
+        <div class="alert alert-info">Your cart is empty.</div>
+        <a class="btn btn-primary" href="/products">Browse products</a>
+      <% } else { %>
+        <div class="table-responsive">
+          <table class="table table-striped align-middle">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Subtotal</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% items.forEach(item => { %>
+                <tr>
+                  <td>
+                    <a href="/products/<%= item.product._id %>" class="text-decoration-none">
+                      <%= item.product.name %>
+                    </a>
+                  </td>
+                  <td>Rs. <%= item.price %></td>
+                  <td><%= item.quantity %></td>
+                  <td>Rs. <%= item.subtotal %></td>
+                  <td class="text-end">
+                    <form action="/cart/remove" method="POST" class="d-inline">
+                      <input type="hidden" name="productId" value="<%= item.product._id %>">
+                      <button type="submit" class="btn btn-sm btn-outline-danger">Remove</button>
+                    </form>
+                  </td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h4 class="mb-0">Total: Rs. <%= total %></h4>
+          <a class="btn btn-success" href="/cart/checkout">Proceed To Checkout</a>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</div>

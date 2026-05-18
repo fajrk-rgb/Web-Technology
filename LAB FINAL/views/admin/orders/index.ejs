@@ -1,0 +1,57 @@
+<h1 class="mb-4">
+    Orders
+</h1>
+
+<table class="table table-bordered">
+
+    <thead>
+
+        <tr>
+
+            <th>Customer</th>
+
+            <th>Phone</th>
+
+            <th>City</th>
+
+            <th>Total</th>
+
+            <th>Date</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <% orders.forEach(order => { %>
+
+            <tr>
+
+                <td>
+                    <%= order.customerName %>
+                </td>
+
+                <td>
+                    <%= order.phone %>
+                </td>
+
+                <td>
+                    <%= order.city %>
+                </td>
+
+                <td>
+                    Rs. <%= order.totalAmount %>
+                </td>
+
+                <td>
+                    <%= order.createdAt.toDateString() %>
+                </td>
+
+            </tr>
+
+        <% }) %>
+
+    </tbody>
+
+</table>

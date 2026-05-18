@@ -1,0 +1,107 @@
+<div class="products-page">
+
+    <h1 class="products-title">
+
+        <%= categoryName %>
+
+    </h1>
+
+    <div class="products-grid">
+
+        <% products.forEach(product => { %>
+
+            <a
+                href="/products/<%= product._id %>"
+                class="product-link"
+            >
+
+                <div class="product-card">
+
+                    <img
+                        src="<%= product.image %>"
+                        alt="<%= product.name %>"
+                        onerror="this.src='/assets/default.jpg'"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+
+                            <%= product.name %>
+
+                        </h3>
+
+                        <p>
+
+                            Category:
+                            <%= product.category %>
+
+                        </p>
+
+                        <p>
+
+                            Price:
+                            Rs. <%= getDisplayPrice(product) %>
+
+                        </p>
+
+                        <p>
+
+                            Rating:
+                             <%= product.rating %>
+
+                        </p>
+
+                        <p>
+
+                            Stock:
+                            <%= product.stock %>
+
+                        </p>
+
+                        
+
+                        <button class="cart-btn">
+
+                            Add To Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        <% }) %>
+
+    </div>
+
+    </div>
+
+    <% if (typeof totalPages !== 'undefined' && totalPages > 1) { %>
+        <div class="pagination">
+            <% const page = currentPage || 1; %>
+            <% if (page > 1) { %>
+                <a href="?page=<%= page - 1 %>">Previous</a>
+            <% } else { %>
+                <a class="disabled">Previous</a>
+            <% } %>
+
+            <% for (let i = 1; i <= totalPages; i++) { %>
+                <% if (i === page) { %>
+                    <a href="?page=<%= i %>" class="active"><%= i %></a>
+                <% } else { %>
+                    <a href="?page=<%= i %>"><%= i %></a>
+                <% } %>
+            <% } %>
+
+            <% if (page < totalPages) { %>
+                <a href="?page=<%= page + 1 %>">Next</a>
+            <% } else { %>
+                <a class="disabled">Next</a>
+            <% } %>
+        </div>
+    <% } %>
+
+</div>
